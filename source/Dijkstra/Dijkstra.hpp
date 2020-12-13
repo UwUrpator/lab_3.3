@@ -8,6 +8,8 @@
 #include "../Graph/NodesStates.hpp"
 #include "../Graph/Graph.hpp"
 
+using namespace std;
+
 class Dijkstra {
 private:
     Graph graph;

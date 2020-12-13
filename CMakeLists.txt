@@ -17,6 +17,7 @@ set(SOURCE_FILES
         #tests
         tests/TestRunner.hpp
         tests/Informator/Informator.hpp
+        tests/DijkstraTester/DijkstraTester.hpp
 
 
         #interface
