@@ -7,7 +7,7 @@ include_directories(source)
 
 set(SOURCE_FILES
         main.cpp
-        constants.cpp
+        constants.hpp
 
         #source
         source/Graph/Graph.hpp
@@ -24,6 +24,7 @@ set(SOURCE_FILES
         interface/basic/SingleField.hpp
         interface/basic/MultiField.hpp
         interface/UIStarter.hpp
+        interface/GraphUI.hpp
         )
 
 add_executable(lab_3.3 ${SOURCE_FILES})

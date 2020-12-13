@@ -1,9 +1,8 @@
 #pragma once
 
+#include "../../constants.hpp"
 #include "../Graph/NodesStates.hpp"
 #include "../Graph/Graph.hpp"
-
-extern const int infinity;
 
 class Dijkstra {
 private:
@@ -30,7 +29,7 @@ Dijkstra::Dijkstra(Graph graph, int node) {
     this->init(node);
     this->relax(node);
     for (int i = this->findMin(); i != -1; i = this->findMin()) {
-        this->nodesStates.setState(i, true);
+        this->nodesStates.setStateOf(i, true);
         this->relax(i);
     }
 }
@@ -51,7 +50,7 @@ void Dijkstra::relax(int node) {
 
 int Dijkstra::findMin() {
     int min = -1;
-    int dist = infinity;
+    int dist = constants::GLOBAL_INF;
 
     for (int i = 0; i < this->graph.getCount(); ++i) {
         if (this->nodesStates.getDistanceTo(i) < dist && !this->nodesStates.getStateOf(i)) {

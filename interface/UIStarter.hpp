@@ -3,6 +3,8 @@
 #include "../tests/TestRunner.hpp"
 #include "basic/SelectorUI.hpp"
 
+#include "GraphUI.hpp"
+
 class UIStarter {
 public:
     UIStarter();
@@ -27,6 +29,6 @@ UIStarter::UIStarter() {
 }
 
 int UIStarter::Selector() {
-    string answers[3] = {"Run tests", "work with graph", "Exit"};
+    string answers[3] = {"Run tests", "Work with graph", "Exit"};
     return SelectorUI("What do you want to do", 3, answers).choice;
 }

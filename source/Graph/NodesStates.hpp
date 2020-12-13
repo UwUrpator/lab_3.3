@@ -1,7 +1,5 @@
 #pragma once
 
-extern const int infinity;
-
 class NodesStates {
 private:
     struct NodeState {
@@ -9,7 +7,7 @@ private:
         bool state;
 
         NodeState() {
-            this->distance = 0;
+            this->distance = constants::GLOBAL_INF;
             this->state = false;
         }
     };
@@ -17,6 +15,8 @@ private:
     NodeState* states;
 
 public:
+    NodesStates();
+
     NodesStates(int count);
 
     int getDistanceTo(int nodeIndex);
@@ -27,6 +27,10 @@ public:
 
     void setStateOf(int nodeIndex, bool newState);
 };
+
+NodesStates::NodesStates() {
+    this->states = nullptr;
+}
 
 NodesStates::NodesStates(int count) {
     this->states = new NodeState[count];
