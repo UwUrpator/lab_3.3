@@ -1,6 +1,4 @@
-#include <iostream>
-
-#include "source/Graph/NodesStates.hpp"
+#pragma once
 
 int main() {
     return 0;

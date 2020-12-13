@@ -1,7 +1,6 @@
 #pragma once
 
 #include "../tests/TestRunner.hpp"
-#include "EnterCacheUI.hpp"
 #include "basic/SelectorUI.hpp"
 
 class UIStarter {
@@ -19,7 +18,7 @@ UIStarter::UIStarter() {
                 TestRunner();
                 break;
             case 2:
-                EnterCacheUI();
+                GraphUI();
                 break;
             case 3:
                 return;
@@ -28,6 +27,6 @@ UIStarter::UIStarter() {
 }
 
 int UIStarter::Selector() {
-    string answers[3] = {"Run tests", "Work with cache", "Exit"};
+    string answers[3] = {"Run tests", "work with graph", "Exit"};
     return SelectorUI("What do you want to do", 3, answers).choice;
 }

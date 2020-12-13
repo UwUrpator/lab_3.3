@@ -10,7 +10,9 @@ set(SOURCE_FILES
         constants.cpp
 
         #source
+        source/Graph/Graph.hpp
         source/Graph/NodesStates.hpp
+        source/Dijkstra/Dijkstra.hpp
 
         #tests
         tests/TestRunner.hpp

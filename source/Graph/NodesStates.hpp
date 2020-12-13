@@ -14,11 +14,10 @@ private:
         }
     };
 
-    int size;
     NodeState* states;
 
 public:
-    NodesStates(int size);
+    NodesStates(int count);
 
     int getDistanceTo(int nodeIndex);
 
@@ -29,9 +28,8 @@ public:
     void setStateOf(int nodeIndex, bool newState);
 };
 
-NodesStates::NodesStates(int size) {
-    this->size = size;
-    this->states = new NodeState[size];
+NodesStates::NodesStates(int count) {
+    this->states = new NodeState[count];
 }
 
 int NodesStates::getDistanceTo(int nodeIndex) {
