@@ -7,8 +7,10 @@ include_directories(source)
 
 set(SOURCE_FILES
         main.cpp
+        constants.cpp
 
         #source
+        source/Graph/NodesStates.hpp
 
         #tests
         tests/TestRunner.hpp

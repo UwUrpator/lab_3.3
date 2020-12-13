@@ -1,6 +1,7 @@
 #include <iostream>
 
+#include "source/Graph/NodesStates.hpp"
+
 int main() {
-    std::cout << "Hello, World!" << std::endl;
     return 0;
 }
