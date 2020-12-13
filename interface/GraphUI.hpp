@@ -72,14 +72,17 @@ void GraphUI::enterGraph() {
 }
 
 int GraphUI::graphSelector() {
-    string answers[2] = {"Length of shortest path", "Exit"};
+    string answers[2] = {"Show the shortest path", "Exit"};
     return SelectorUI("What do you want to do", 2, answers).choice;
 }
 
 void GraphUI::DijkstraUI() {
     this->enterParameters();
 
-    int dist = Dijkstra(this->graph, this->start).getDistance(this->finish);
+    Dijkstra dijkstra = Dijkstra(this->graph, this->start);
+
+    int dist = dijkstra.getDistance(this->finish);
+    string path = dijkstra.showPath(this->finish);
 
     if (dist == constants::GLOBAL_INF) {
         cout << "No way between nodes" << endl;
@@ -87,5 +90,6 @@ void GraphUI::DijkstraUI() {
     else {
         cout << "Distance from " << this->start << " node to "
              << this->finish << " node is " << dist << endl;
+        cout << "The path is: " << path << endl;
     }
 }

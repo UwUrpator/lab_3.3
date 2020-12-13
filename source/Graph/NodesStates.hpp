@@ -4,10 +4,12 @@ class NodesStates {
 private:
     struct NodeState {
         int distance;
+        int parent;
         bool state;
 
         NodeState() {
             this->distance = constants::GLOBAL_INF;
+            this->parent = -1;
             this->state = false;
         }
     };
@@ -22,6 +24,10 @@ public:
     int getDistanceTo(int nodeIndex);
 
     void setDistanceTo(int nodeIndex, int newDistance);
+
+    int getParentOf(int nodeIndex);
+
+    void setParentOf(int nodeIndex, int newParent);
 
     bool getStateOf(int nodeIndex);
 
@@ -42,6 +48,14 @@ int NodesStates::getDistanceTo(int nodeIndex) {
 
 void NodesStates::setDistanceTo(int nodeIndex, int newDistance) {
     this->states[nodeIndex].distance = newDistance;
+}
+
+int NodesStates::getParentOf(int nodeIndex) {
+    return this->states[nodeIndex].parent;
+}
+
+void NodesStates::setParentOf(int nodeIndex, int newParent) {
+    this->states[nodeIndex].parent = newParent;
 }
 
 bool NodesStates::getStateOf(int nodeIndex) {
